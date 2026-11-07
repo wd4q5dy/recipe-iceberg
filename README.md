@@ -1,5 +1,7 @@
 # Iceberg
 
+Deployed at https://app-fmqivvhx90jl.appmedo.com/
+
 ## Requirements
 Node.js 18 or newer, plus npm.
 
