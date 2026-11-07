@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root,
+  .dark {
+    --radius: 0.25rem;
+
+    --background: 207 71% 7%;
+    --foreground: 196 54% 93%;
+
+    --card: 205 63% 11%;
+    --card-foreground: 196 54% 93%;
+
+    --popover: 204 63% 13%;
+    --popover-foreground: 196 54% 93%;
+
+    --primary: 171 72% 56%;
+    --primary-foreground: 205 75% 6%;
+
+    --secondary: 200 56% 16%;
+    --secondary-foreground: 196 55% 88%;
+
+    --muted: 202 58% 13%;
+    --muted-foreground: 200 27% 60%;
+
+    --accent: 34 100% 66%;
+    --accent-foreground: 33 86% 5%;
+
+    --destructive: 0 100% 71%;
+    --destructive-foreground: 0 60% 6%;
+
+    --border: 206 49% 22%;
+    --input: 203 48% 17%;
+    --ring: 171 72% 56%;
+
+    --chart-1: 171 72% 56%;
+    --chart-2: 34 100% 66%;
+    --chart-3: 216 100% 72%;
+    --chart-4: 258 90% 76%;
+    --chart-5: 330 81% 70%;
+
+    --sidebar-background: 203 70% 9%;
+    --sidebar-foreground: 196 54% 93%;
+    --sidebar-primary: 171 72% 56%;
+    --sidebar-primary-foreground: 205 75% 6%;
+    --sidebar-accent: 200 56% 16%;
+    --sidebar-accent-foreground: 196 55% 88%;
+    --sidebar-border: 206 49% 22%;
+    --sidebar-ring: 171 72% 56%;
+
+    --education-blue: 216 100% 72%;
+    --education-green: 171 72% 56%;
+    --success: 158 64% 52%;
+    --warning: 34 100% 66%;
+    --info: 216 100% 72%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(171 72% 56%), hsl(190 80% 45%));
+    --gradient-card: linear-gradient(160deg, hsl(205 63% 13%), hsl(205 63% 9%));
+    --gradient-background: linear-gradient(180deg, hsl(203 70% 12%) 0%, hsl(207 71% 7%) 45%, hsl(210 80% 3%) 100%);
+
+    --shadow-card: inset 0 1px 0 0 hsl(196 54% 93% / 0.06), 0 12px 32px -12px hsl(210 90% 2% / 0.9);
+    --shadow-hover: inset 0 1px 0 0 hsl(196 54% 93% / 0.12), 0 18px 44px -14px hsl(210 90% 2% / 0.95);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.3);
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+  }
+}
+
+@layer components {
+  .font-mono-num {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .slot-bevel {
+    box-shadow:
+      inset 1px 1px 0 0 hsl(196 54% 93% / 0.1),
+      inset -1px -1px 0 0 hsl(210 90% 2% / 0.65),
+      0 10px 24px -14px hsl(210 90% 2% / 0.9);
+  }
+
+  .slot-bevel-active {
+    box-shadow:
+      inset 1px 1px 0 0 hsl(171 72% 56% / 0.35),
+      inset -1px -1px 0 0 hsl(210 90% 2% / 0.7),
+      0 0 0 1px hsl(171 72% 56% / 0.45),
+      0 14px 32px -16px hsl(171 72% 56% / 0.35);
+  }
+
+  .corner-notch {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 10px) 0,
+      100% 10px,
+      100% 100%,
+      10px 100%,
+      0 calc(100% - 10px)
+    );
+  }
+
+  .grain-overlay {
+    background-image: repeating-linear-gradient(
+      0deg,
+      hsl(196 54% 93% / 0.035) 0px,
+      hsl(196 54% 93% / 0.035) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  }
+
+  .stratum-rule {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--primary) / 0.55),
+      hsl(var(--border) / 0.35) 35%,
+      transparent
+    );
+  }
+
+  .hide-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
